@@ -1,0 +1,19 @@
+:root {
+    --font-main: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+    --color-bg: #f7f6f2;
+    --color-text: #333;
+    --color-light-text: #666;
+
+    --color-border: #ddd;
+    --color-accent: #bfa980;
+
+    --space-section: 80px;
+    --space-section-mobile: 50px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --space-section: var(--space-section-mobile);
+    }
+}
