@@ -6,5 +6,6 @@ import router from './router'
 import './assets/styles/base.css'
 import './assets/styles/variables.css'
 import './assets/styles/theme.css'
+import './assets/styles/global.css'
 
 createApp(App).use(router).mount('#app')

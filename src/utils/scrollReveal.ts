@@ -5,7 +5,11 @@ export function initScrollReveal(): void {
     (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          // 进入视口 → 显示
           entry.target.classList.add('visible')
+        } else {
+          // 离开视口 → 隐藏
+          entry.target.classList.remove('visible')
         }
       })
     },
