@@ -1,3 +1,12 @@
+<script setup>
+import DefaultLayout from '../layouts/DefaultLayout.vue'
+import PageTitle from '../components/common/PageTitle.vue'
+
+// 正确导入图片（Vite 会自动处理路径）
+import room1 from '@/assets/images/room1.jpg'
+import room2 from '@/assets/images/room2.jpg'
+import room3 from '@/assets/images/room3.jpg'
+</script>
 <template>
     <DefaultLayout>
         <PageTitle title="Room" subtitle="落ち着いた空間で、ゆっくりとお過ごしください。" />
@@ -11,18 +20,13 @@
             </div>
 
             <div class="room-gallery">
-                <img src="/src/assets/images/room1.jpg" alt="Room 1" />
-                <img src="/src/assets/images/room2.jpg" alt="Room 2" />
-                <img src="/src/assets/images/room3.jpg" alt="Room 3" />
+                <img :src="room1" alt="Room 1" />
+                <img :src="room2" alt="Room 2" />
+                <img :src="room3" alt="Room 3" />
             </div>
         </section>
     </DefaultLayout>
 </template>
-
-<script setup>
-import DefaultLayout from '../layouts/DefaultLayout.vue'
-import PageTitle from '../components/common/PageTitle.vue'
-</script>
 
 <style scoped>
 .section {

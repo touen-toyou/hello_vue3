@@ -1,3 +1,13 @@
+<script setup>
+import DefaultLayout from '../layouts/DefaultLayout.vue'
+import PageTitle from '../components/common/PageTitle.vue'
+
+// 正确导入图片（Vite 会自动处理路径）
+import takeout1 from '@/assets/images/takeout1.jpg'
+import takeout2 from '@/assets/images/takeout2.jpg'
+</script>
+
+
 <template>
     <DefaultLayout>
         <PageTitle title="Takeout" subtitle="ご自宅でもお店の味をお楽しみいただけます。" />
@@ -10,25 +20,20 @@
                 </p>
             </div>
 
-            <div class="takeout-list">
+          <div class="takeout-list">
                 <div class="item">
-                    <img src="/src/assets/images/takeout1.jpg" />
+                    <img :src="takeout1" alt="Takeout 1" />
                     <h3>季節の弁当</h3>
                 </div>
 
                 <div class="item">
-                    <img src="/src/assets/images/takeout2.jpg" />
+                    <img :src="takeout2" alt="Takeout 2" />
                     <h3>オードブル</h3>
                 </div>
             </div>
         </section>
     </DefaultLayout>
 </template>
-
-<script setup>
-import DefaultLayout from '../layouts/DefaultLayout.vue'
-import PageTitle from '../components/common/PageTitle.vue'
-</script>
 
 <style scoped>
 .section {

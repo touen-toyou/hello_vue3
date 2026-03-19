@@ -23,11 +23,12 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-const images = [
-    '/src/assets/images/hero1.jpg',
-    '/src/assets/images/hero2.jpg',
-    '/src/assets/images/hero3.jpg'
-]
+// 正确导入图片（Vite 会自动处理路径）
+import hero1 from '@/assets/images/hero1.jpg'
+import hero2 from '@/assets/images/hero2.jpg'
+import hero3 from '@/assets/images/hero3.jpg'
+
+const images = [hero1, hero2, hero3]
 
 const currentIndex = ref(0)
 
@@ -37,6 +38,7 @@ onMounted(() => {
     }, 3000)
 })
 </script>
+
 
 <style scoped>
 .hero {
@@ -99,16 +101,24 @@ onMounted(() => {
 }
 
 .title {
-    font-size: 48px;
-    letter-spacing: 0.25em;
-    margin-bottom: 10px;
+    font-family: "Noto Serif JP", serif;
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    margin-bottom: 12px;
+    color: #f5f5f5;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
     animation: fadeIn 1.2s ease forwards;
     opacity: 0;
 }
 
 .subtitle {
-    font-size: 16px;
-    letter-spacing: 0.3em;
+    font-family: "Noto Serif JP", serif;
+    font-size: 18px;
+    letter-spacing: 0.28em;
+    color: #e8e8e8;
+    opacity: 0.85;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
     animation: fadeIn 1.6s ease forwards;
     opacity: 0;
 }
@@ -168,11 +178,13 @@ onMounted(() => {
 /* 手机端适配 */
 @media (max-width: 768px) {
     .title {
-        font-size: 32px;
+        font-size: 36px;
+        letter-spacing: 0.15em;
     }
 
     .subtitle {
-        font-size: 12px;
+        font-size: 14px;
+        letter-spacing: 0.2em;
     }
 }
 </style>

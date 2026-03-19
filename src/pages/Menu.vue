@@ -21,39 +21,48 @@
 <script setup lang="ts">
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 
+// 正确导入图片（Vite 会自动处理路径）
+import mabo from '@/assets/images/menu/mabo.jpg'
+import ebichiri from '@/assets/images/menu/ebichiri.jpg'
+import chinjao from '@/assets/images/menu/chinjao.jpg'
+import chaofan from '@/assets/images/menu/chaofan.jpg'
+import xiaolongbao from '@/assets/images/menu/xiaolongbao.jpg'
+import tantanmen from '@/assets/images/menu/tantanmen.jpg'
+
 const menuItems = [
     {
         name: '麻婆豆腐',
         price: '¥1,280',
-        image: '/src/assets/images/menu/mabo.jpg'
+        image: mabo
     },
     {
         name: 'エビチリ',
         price: '¥1,580',
-        image: '/src/assets/images/menu/ebichiri.jpg'
+        image: ebichiri
     },
     {
         name: '青椒肉絲',
         price: '¥1,380',
-        image: '/src/assets/images/menu/chinjao.jpg'
+        image: chinjao
     },
     {
         name: '五目炒飯',
         price: '¥1,100',
-        image: '/src/assets/images/menu/chaofan.jpg'
+        image: chaofan
     },
     {
         name: '小籠包（6個）',
         price: '¥980',
-        image: '/src/assets/images/menu/xiaolongbao.jpg'
+        image: xiaolongbao
     },
     {
         name: '担々麺',
         price: '¥1,200',
-        image: '/src/assets/images/menu/tantanmen.jpg'
+        image: tantanmen
     }
 ]
 </script>
+
 
 <style scoped>
 .menu-section {

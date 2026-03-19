@@ -1,3 +1,7 @@
+<script setup>
+import room1 from '@/assets/images/room1.jpg'
+</script>
+
 <template>
     <section class="section reveal">
         <div class="inner">
@@ -12,11 +16,12 @@
             </div>
 
             <div class="image-block">
-                <img src="/src/assets/images/room1.jpg" alt="Restaurant Interior" />
+                <img :src="room1" alt="Restaurant Interior" />
             </div>
         </div>
     </section>
 </template>
+
 
 <style scoped>
 .section {
