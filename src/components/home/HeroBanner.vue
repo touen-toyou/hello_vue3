@@ -11,7 +11,9 @@
             <h1 class="title">涛远中华料理</h1>
             <p class="subtitle">TAOYUAN CHINESE CUISINE</p>
         </div>
-
+       <!-- 左右切换按钮 -->
+        <button class="hero-btn prev" @click="prevImage">‹</button>
+        <button class="hero-btn next" @click="nextImage">›</button>
         <!-- scroll 提示 -->
         <div class="scroll-indicator">
             <span>scroll</span>
@@ -37,6 +39,15 @@ onMounted(() => {
         currentIndex.value = (currentIndex.value + 1) % images.length
     }, 3000)
 })
+function nextImage() {
+    currentIndex.value = (currentIndex.value + 1) % images.length
+}
+
+function prevImage() {
+    currentIndex.value =
+        (currentIndex.value - 1 + images.length) % images.length
+}
+
 </script>
 
 
@@ -139,7 +150,7 @@ onMounted(() => {
     text-align: center;
     color: #fff;
     z-index: 3;
-    animation: fadeIn 2s ease forwards;
+    animation: fadeIn 5s ease forwards;
     opacity: 0;
 }
 
@@ -186,5 +197,51 @@ onMounted(() => {
         font-size: 14px;
         letter-spacing: 0.2em;
     }
+}
+@media (max-width: 768px) {
+    .hero-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
+    }
+
+    .hero-btn.prev {
+        left: 16px;
+    }
+
+    .hero-btn.next {
+        right: 16px;
+    }
+}
+.hero-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.15);
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #d4b06a;
+    /* 高级金色 */
+    color: #d4b06a;
+}
+
+.hero-btn.prev {
+    left: 30px;
+}
+
+.hero-btn.next {
+    right: 30px;
 }
 </style>
